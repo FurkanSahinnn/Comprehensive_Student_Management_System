@@ -1,0 +1,46 @@
+# Comprehensive Student Management System
+
+Database Name = student
+Table Name = profile
+```sql
++---------------+-------------+------+-----+-------------------+-------------------+
+| Field         | Type        | Null | Key | Default           | Extra             |
++---------------+-------------+------+-----+-------------------+-------------------+
+| id            | int         | NO   | PRI | NULL              | auto_increment    |
+| name          | varchar(40) | NO   |     | NULL              |                   |
+| register_time | datetime    | YES  |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED |
+| address       | varchar(40) | YES  |     | NULL              |                   |
++---------------+-------------+------+-----+-------------------+-------------------+
+```
+### JDBC class: 
+To be used for connecting to the MYSQL.
+### Student class:
+To be used for matching the student table.
+### Actions class: 
+To be used for CRUD operations with MYSQL.
+### GuiPanel class:
+To be used for visualizing Student Management System.
+### Main  class:
+It is used for data transfer between the GuiPanel class and the Actions class, and also enables the execution of GuiPanel and the display of the UI section.
+
+## What you need to do before starting the project:
+Step 1) Install MYSQL.
+
+Step 2) Download mysql-connector-j-<version>.jar file. (You can use this repository's JAR file.)
+
+Step 3) Add MySQL connector file to Intellij IDEA
+        (File -> Project Structure -> Dependencies -> '+' -> JARs or Directories -> mysql connector file path)
+
+Step 4) Create database and table. (e.g., Student database and profile table)
+```sql
+create database student;
+show databases;
+use student;
+
+CREATE TABLE student (
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(40) NOT NULL,
+    register_time DATETIME DEFAULT CURRENT_TIMESTAMP,
+    address VARCHAR(40)
+);
+```
